@@ -40,6 +40,18 @@ class MyProfil extends StatelessWidget {
           ),
         ],
       ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(20),
+            child: Center(
+              child: Column(
+                children: [CircleAvatar(radius: 20, child: Icon(Icons.person))],
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
