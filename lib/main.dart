@@ -57,6 +57,11 @@ class MyProfil extends StatelessWidget {
                   ),
                   Text('Teknik Informatika'),
                   Text('1124160129', style: TextStyle(fontSize: 20)),
+                  SizedBox(height: 24),
+                  Align(
+                    alignment: AlignmentGeometry.centerLeft,
+                    child: Text("Informasi"),
+                  ),
                   Card(
                     child: Column(
                       children: [
@@ -95,6 +100,11 @@ class MyProfil extends StatelessWidget {
                           ikon: Icons.shop,
                           label: 'Ramayana',
                           value: '0812-1272-7373',
+                        ),
+                        InfoRow(
+                          ikon: Icons.add,
+                          label: 'Icon Tambah',
+                          value: 'Buat nambah',
                         ),
                       ],
                     ),
