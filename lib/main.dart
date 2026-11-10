@@ -82,6 +82,22 @@ class MyProfil extends StatelessWidget {
                       ],
                     ),
                   ),
+                  Card(
+                    child: Column(
+                      children: [
+                        InfoRow(
+                          ikon: Icons.directions_bike,
+                          label: 'Sempur - Margasari',
+                          value: '15 km',
+                        ),
+                        InfoRow(
+                          ikon: Icons.shop,
+                          label: 'Ramayana',
+                          value: '0812-1272-7373',
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
