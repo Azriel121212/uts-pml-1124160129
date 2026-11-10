@@ -64,6 +64,14 @@ class MyProfil extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          ScaffoldMessenger.of(context)
+              .showSnackBar(SnackBar(content: Text('Nambahin apa bor ?')));
+        },
+        child: Icon(Icons.add),
+        tooltip: 'Add',
+      ),
     );
   }
 }
