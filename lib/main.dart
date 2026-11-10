@@ -46,7 +46,19 @@ class MyProfil extends StatelessWidget {
             padding: EdgeInsets.all(20),
             child: Center(
               child: Column(
-                children: [CircleAvatar(radius: 20, child: Icon(Icons.person))],
+                children: [
+                  CircleAvatar(radius: 20, child: Icon(Icons.person)),
+                  SizedBox(height: 20),
+                  Text(
+                    'Chaerul Azriel Ardiansyah',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  Text('1124160129', style: TextStyle(fontSize: 20)),
+                  Card(child: Column(children: [
+
+                      ],
+                    )),
+                ],
               ),
             ),
           ),
