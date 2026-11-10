@@ -55,6 +55,7 @@ class MyProfil extends StatelessWidget {
                     'Chaerul Azriel Ardiansyah',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
+                  Text('Teknik Informatika'),
                   Text('1124160129', style: TextStyle(fontSize: 20)),
                   Card(
                     child: Column(
