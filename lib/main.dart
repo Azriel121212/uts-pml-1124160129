@@ -27,6 +27,8 @@ class MyProfil extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.amber,
+        foregroundColor: Colors.white,
         title: Text('Chaerul Azriel Ardiansyah'),
         centerTitle: true,
         actions: [
@@ -54,10 +56,32 @@ class MyProfil extends StatelessWidget {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   Text('1124160129', style: TextStyle(fontSize: 20)),
-                  Card(child: Column(children: [
-
+                  Card(
+                    child: Column(
+                      children: [
+                        InfoRow(
+                          ikon: Icons.email,
+                          label: 'Chaerul Azriel Ardiansyah',
+                          value: '1124160129',
+                        ),
+                        InfoRow(
+                          ikon: Icons.phone,
+                          label: 'Chaerul Azriel Ardiansyah',
+                          value: '0814-1092-2406',
+                        ),
+                        InfoRow(
+                          ikon: Icons.school,
+                          label: 'Chaerul Azriel Ardiansyah',
+                          value: 'TI24PSE1',
+                        ),
+                        InfoRow(
+                          ikon: Icons.facebook,
+                          label: 'Chaerul Azriel Ardiansyah',
+                          value: 'https://github.com/Azriel121212',
+                        ),
                       ],
-                    )),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -69,9 +93,30 @@ class MyProfil extends StatelessWidget {
           ScaffoldMessenger.of(context)
               .showSnackBar(SnackBar(content: Text('Nambahin apa bor ?')));
         },
-        child: Icon(Icons.add),
         tooltip: 'Add',
+        child: Icon(Icons.add),
       ),
+    );
+  }
+}
+
+class InfoRow extends StatelessWidget {
+  const InfoRow({
+    super.key,
+    required this.ikon,
+    required this.label,
+    required this.value,
+  });
+  final IconData ikon;
+  final String label;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Icon(ikon),
+      title: Text(label),
+      subtitle: Text(value),
     );
   }
 }
