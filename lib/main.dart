@@ -25,6 +25,20 @@ class MyProfil extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Chaerul Azriel Ardiansyah'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              ScaffoldMessenger.of(context)
+                  .showSnackBar(SnackBar(content: Text('Search')));
+            },
+            icon: Icon(Icons.search),
+          ),
+        ],
+      ),
+    );
   }
 }
