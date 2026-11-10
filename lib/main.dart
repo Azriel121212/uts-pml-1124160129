@@ -33,9 +33,10 @@ class MyProfil extends StatelessWidget {
           IconButton(
             onPressed: () {
               ScaffoldMessenger.of(context)
-                  .showSnackBar(SnackBar(content: Text('Search')));
+                  .showSnackBar(SnackBar(content: Text('Nambahin apa bro')));
             },
             icon: Icon(Icons.search),
+            tooltip: 'Search',
           ),
         ],
       ),
