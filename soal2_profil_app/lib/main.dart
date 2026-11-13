@@ -12,8 +12,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Profil Azriel - 1124160129',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.blue),
+      // Tema Terang bernuansa Silver
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.blueGrey,
+        brightness: Brightness.light,
+      ),
+      // Tema Gelap bernuansa Silver Gelap
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.blueGrey,
+        brightness: Brightness.dark,
+      ),
+      themeMode: ThemeMode.light,
       home: const AboutPage(),
     );
   }
