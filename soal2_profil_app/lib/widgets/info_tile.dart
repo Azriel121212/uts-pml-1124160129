@@ -14,9 +14,18 @@ class InfoTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final warnaTema = Theme.of(context).colorScheme;
+
     return ListTile(
-      leading: Icon(ikon),
-      title: Text(label),
+      leading: CircleAvatar(
+        backgroundColor: warnaTema.primaryContainer,
+        foregroundColor: warnaTema.onPrimaryContainer,
+        child: Icon(ikon, size: 20),
+      ),
+      title: Text(
+        label,
+        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+      ),
       subtitle: Text(value),
     );
   }
