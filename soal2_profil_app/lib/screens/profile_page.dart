@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/profile.dart';
 import '../widgets/info_tile.dart';
 import 'about_page.dart';
+import 'edit_profile_page.dart';
 
 class ProfilePage extends StatefulWidget {
   final VoidCallback? onToggleTheme;
@@ -21,10 +22,30 @@ class _ProfilePageState extends State<ProfilePage> {
     prodi: 'Teknik Informatika (Software Engineering)',
     kelas: 'TI24PSE1',
     bio: 'Mahasiswa S1 Teknik Informatika yang fokus pada pengembangan aplikasi Mobile & Web Full-Stack.',
-    email: 'azriel@global.ac.id',
+    email: '1124160129@global.ac.id',
     hp: '081410922406',
     github: 'https://github.com/Azriel121212',
   );
+
+  Future<void> _bukaEditProfil() async {
+    final hasilEdit = await Navigator.push<Profile>(
+      context,
+      MaterialPageRoute(
+        builder: (context) => EditProfilePage(currentProfile: dataProfil),
+      ),
+    );
+
+    if (hasilEdit != null) {
+      setState(() {
+        dataProfil = hasilEdit;
+      });
+
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Profil berhasil diperbarui!')),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -192,11 +213,7 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Membuka halaman Edit Profil')),
-          );
-        },
+        onPressed: _bukaEditProfil,
         icon: const Icon(Icons.edit),
         label: const Text('Edit Profil'),
       ),
