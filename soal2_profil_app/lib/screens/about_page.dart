@@ -16,14 +16,12 @@ class AboutPage extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        backgroundColor:
-            warnaTema.surfaceContainerHighest, // Warna header Silver
+        backgroundColor: warnaTema.surfaceContainerHighest,
         foregroundColor: warnaTema.onSurface,
       ),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
-          // 1. HEADER PROFIL (Avatar di Tengah Atas + Nama + NIM)
           Card(
             color: warnaTema.surfaceContainerHigh,
             elevation: 1,
@@ -75,8 +73,6 @@ class AboutPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 24),
-
-          // 2. BAGIAN KEAHLIAN & HOBI (Minimal 3 sesuai Soal A.4)
           const Padding(
             padding: EdgeInsets.only(left: 4, bottom: 8),
             child: Text(
@@ -118,8 +114,6 @@ class AboutPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 24),
-
-          // 3. BAGIAN RIWAYAT PENDIDIKAN (Sesuai Soal A.4)
           const Padding(
             padding: EdgeInsets.only(left: 4, bottom: 8),
             child: Text(
