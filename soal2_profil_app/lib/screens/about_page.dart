@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../widgets/info_tile.dart';
 
 class AboutPage extends StatelessWidget {
@@ -34,10 +33,20 @@ class AboutPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CircleAvatar(
-                    radius: 40,
+                    radius: 44,
                     backgroundColor: warnaTema.primary,
                     foregroundColor: warnaTema.onPrimary,
-                    child: const Icon(Icons.person, size: 42),
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/images/profile.jpg',
+                        width: 88,
+                        height: 88,
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) {
+                          return const Icon(Icons.person, size: 42);
+                        },
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 14),
                   Text(

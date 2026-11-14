@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../models/profile.dart';
 import '../widgets/info_tile.dart';
 import 'about_page.dart';
@@ -10,7 +9,11 @@ class ProfilePage extends StatefulWidget {
   final VoidCallback? onToggleTheme;
   final bool isDarkMode;
 
-  const ProfilePage({super.key, this.onToggleTheme, this.isDarkMode = false});
+  const ProfilePage({
+    super.key,
+    this.onToggleTheme,
+    this.isDarkMode = false,
+  });
 
   @override
   State<ProfilePage> createState() => _ProfilePageState();
@@ -22,8 +25,9 @@ class _ProfilePageState extends State<ProfilePage> {
     nim: '1124160129',
     prodi: 'Teknik Informatika (Software Engineering)',
     kelas: 'TI24PSE1',
-    bio: 'Mahasiswa S1 Teknik Informatika yang fokus pada pengembangan aplikasi Mobile & Web Full-Stack.',
-    email: '1124160129@global.ac.id',
+    bio:
+        'Mahasiswa S1 Teknik Informatika yang fokus pada pengembangan aplikasi Mobile & Web Full-Stack.',
+    email: 'azriel@global.ac.id',
     hp: '081410922406',
     github: 'https://github.com/Azriel121212',
   );
@@ -43,9 +47,30 @@ class _ProfilePageState extends State<ProfilePage> {
 
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Profil berhasil diperbarui!')),
+        const SnackBar(
+          content: Text('Profil berhasil diperbarui!'),
+        ),
       );
     }
+  }
+
+  Widget _buildAvatar(ColorScheme warnaTema, double radius, double iconSize) {
+    return CircleAvatar(
+      radius: radius,
+      backgroundColor: warnaTema.primary,
+      foregroundColor: warnaTema.onPrimary,
+      child: ClipOval(
+        child: Image.asset(
+          'assets/images/profile.jpg',
+          width: radius * 2,
+          height: radius * 2,
+          fit: BoxFit.cover,
+          errorBuilder: (context, error, stackTrace) {
+            return Icon(Icons.person, size: iconSize);
+          },
+        ),
+      ),
+    );
   }
 
   @override
@@ -78,11 +103,7 @@ class _ProfilePageState extends State<ProfilePage> {
           children: [
             UserAccountsDrawerHeader(
               decoration: BoxDecoration(color: warnaTema.primary),
-              currentAccountPicture: CircleAvatar(
-                backgroundColor: warnaTema.onPrimary,
-                foregroundColor: warnaTema.primary,
-                child: const Icon(Icons.person, size: 36),
-              ),
+              currentAccountPicture: _buildAvatar(warnaTema, 36, 36),
               accountName: Text(
                 dataProfil.nama,
                 style: const TextStyle(fontWeight: FontWeight.bold),
@@ -141,12 +162,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     padding: const EdgeInsets.all(20),
                     child: Column(
                       children: [
-                        CircleAvatar(
-                          radius: 45,
-                          backgroundColor: warnaTema.primary,
-                          foregroundColor: warnaTema.onPrimary,
-                          child: const Icon(Icons.person, size: 48),
-                        ),
+                        _buildAvatar(warnaTema, 48, 48),
                         const SizedBox(height: 14),
                         Text(
                           dataProfil.nama,
