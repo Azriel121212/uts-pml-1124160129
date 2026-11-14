@@ -4,6 +4,7 @@ import '../models/profile.dart';
 import '../widgets/info_tile.dart';
 import 'about_page.dart';
 import 'edit_profile_page.dart';
+import 'login_page.dart';
 
 class ProfilePage extends StatefulWidget {
   final VoidCallback? onToggleTheme;
@@ -101,6 +102,23 @@ class _ProfilePageState extends State<ProfilePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const AboutPage()),
+                );
+              },
+            ),
+            const Divider(),
+            ListTile(
+              leading: const Icon(Icons.logout),
+              title: const Text('Keluar (Logout)'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoginPage(
+                      isDarkMode: widget.isDarkMode,
+                      onToggleTheme: widget.onToggleTheme,
+                    ),
+                  ),
                 );
               },
             ),
