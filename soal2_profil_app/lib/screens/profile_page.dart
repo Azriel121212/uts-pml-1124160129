@@ -27,7 +27,7 @@ class _ProfilePageState extends State<ProfilePage> {
     kelas: 'TI24PSE1',
     bio:
         'Mahasiswa S1 Teknik Informatika yang fokus pada pengembangan aplikasi Mobile & Web Full-Stack.',
-    email: 'azriel@global.ac.id',
+    email: '1124160129@global.ac.id',
     hp: '081410922406',
     github: 'https://github.com/Azriel121212',
   );
