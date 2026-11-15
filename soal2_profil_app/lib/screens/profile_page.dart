@@ -54,6 +54,37 @@ class _ProfilePageState extends State<ProfilePage> {
     }
   }
 
+  void _konfirmasiLogout() {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Konfirmasi Keluar'),
+        content: const Text('Apakah Anda yakin ingin keluar?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('Batal'),
+          ),
+          FilledButton(
+            onPressed: () {
+              Navigator.pop(ctx);
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LoginPage(
+                    isDarkMode: widget.isDarkMode,
+                    onToggleTheme: widget.onToggleTheme,
+                  ),
+                ),
+              );
+            },
+            child: const Text('Ya, Keluar'),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget _buildAvatar(ColorScheme warnaTema, double radius, double iconSize) {
     return CircleAvatar(
       radius: radius,
@@ -132,15 +163,7 @@ class _ProfilePageState extends State<ProfilePage> {
               title: const Text('Keluar (Logout)'),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => LoginPage(
-                      isDarkMode: widget.isDarkMode,
-                      onToggleTheme: widget.onToggleTheme,
-                    ),
-                  ),
-                );
+                _konfirmasiLogout();
               },
             ),
           ],
