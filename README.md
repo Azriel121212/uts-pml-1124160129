@@ -10,7 +10,7 @@
 ---
 
 ## Link Penting (Video YouTube & Release APK)
-- **Video Presentasi YouTube:** [Tonton Video Presentasi UTS - Chaerul Azriel Ardiansyah](https://youtube.com/) *(Link diperbarui setelah upload)*
+- **Video Presentasi YouTube:** [Tonton Video Presentasi UTS - Chaerul Azriel Ardiansyah](https://youtu.be/Qu5VoK3iiQw) *
 - **Download APK (v1.0.0):** [Unduh app-release.apk di GitHub Releases](https://github.com/Azriel121212/uts-pml-1124160129/releases/tag/v1.0.0)
 
 ---
